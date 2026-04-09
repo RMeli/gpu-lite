@@ -35,10 +35,14 @@ endif()
 option(GPULITE_BUILD_EXAMPLES "Build gpulite examples" GPULITE_MAIN_PROJECT)
 
 if(GPULITE_BUILD_EXAMPLES)
+    include(CTest)
+    enable_testing()
+
     add_subdirectory(examples/basic_vector_add)
     add_subdirectory(examples/matrix_multiply)
     add_subdirectory(examples/templated_kernels)
     add_subdirectory(examples/async_operations)
+
 endif()
 
 # Installation rules
